@@ -1,13 +1,14 @@
-Summary:	Organize your preferred applications on the GNOME Panel.
-Summary(pl):	Umieszcza Twoje ulubione aplikacje na panelu GNOME
+Summary:	Organize your preferred applications on the GNOME Panel
+Summary(pl):	Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME
 Name:		gnome-applet-quick-lounge
 Version:	0.96
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://prdownloads.sourceforge.net/quick-lounge/quick-lounge-applet-%{version}.tar.gz
-URL:		http://quick-lounge.sourceforge.net
+URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	gnome-panel-devel
+Requires(post):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -17,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Organize your preferred applications on the GNOME Panel.
 
 %description -l pl
-Umieszcza Twoje ulubione aplikacje na panelu GNOME
+Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 
 %prep
 %setup -q -n quick-lounge-applet-%{version}
@@ -44,7 +45,7 @@ GCONF_CONFIG_SOURCE=`%{_bindir}/gconftool-2 --get-default-source` %{_bindir}/gco
 
 %files -f quick-lounge-applet.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README COPYING
+%doc AUTHORS NEWS README
 %config %{_sysconfdir}/gconf/schemas/*
 %attr(755,root,root) %{_libdir}/quick-lounge-applet
 %{_libdir}/bonobo/servers/*.server
