@@ -31,9 +31,8 @@ Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} \
-	DESTDIR=$RPM_BUILD_ROOT \
-	install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang quick-lounge-applet --with-gnome --all-name
 
