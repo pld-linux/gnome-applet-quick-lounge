@@ -51,5 +51,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_libdir}/bonobo/servers/*.server
 %{_datadir}/gnome-2.0/ui/*.xml
-%{_datadir}/pixmaps/*.png
 %{_datadir}/quick-lounge
+%{_pixmapsdir}/*.png
