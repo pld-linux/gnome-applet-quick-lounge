@@ -1,11 +1,11 @@
 Summary:	Organize your preferred applications on the GNOME Panel
 Summary(pl):	Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME
 Name:		gnome-applet-quick-lounge
-Version:	1.1.3
+Version:	1.1.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/quick-lounge/quick-lounge-applet-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/1.1/quick-lounge-applet-%{version}.tar.bz2
 URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	gnome-panel-devel >= 2.2.0
 Requires(post):	GConf2
