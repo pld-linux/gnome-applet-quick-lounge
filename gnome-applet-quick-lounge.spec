@@ -1,12 +1,12 @@
 Summary:	Organize your preferred applications on the GNOME Panel
 Summary(pl):	Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME
 Name:		gnome-applet-quick-lounge
-Version:	2.0.0
-Release:	2
+Version:	2.0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/2.0/quick-lounge-applet-%{version}.tar.bz2
-# Source0-md5:	b3791f2a67dcb9d9475479b5aab6d424
+# Source0-md5:	5f55afbe5714a3585df394150f10f6f7
 URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	gnome-desktop-devel >= 2.3.4-2
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
@@ -36,7 +36,8 @@ Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	localedir=%{_datadir}/locale
 
 %find_lang quick-lounge-applet --with-gnome --all-name
 
