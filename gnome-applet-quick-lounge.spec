@@ -10,7 +10,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/2.0/quick-lo
 URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	gnome-desktop-devel >= 2.3.4-2
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
-Buildrequires:	gnome-vfs2-devel >= 2.0.0
+BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 Requires(post):	GConf2
