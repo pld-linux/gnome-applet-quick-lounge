@@ -29,7 +29,7 @@ Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 %configure \
 	--disable-schemas-install \
 	--disable-static
-	
+
 %{__make}
 
 %install
