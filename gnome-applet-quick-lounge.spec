@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/1.1/quick-lounge-applet-%{version}.tar.bz2
+# Source0-md5:	0202a64a244e93970e7f0bf4b49b7b54
 URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	gnome-panel-devel >= 2.2.0
 Requires(post):	GConf2
