@@ -26,6 +26,7 @@ Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 %setup -q -n quick-lounge-applet-%{version}
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--disable-schemas-install \
 	--disable-static
