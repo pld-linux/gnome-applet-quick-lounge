@@ -1,11 +1,12 @@
---- quick-lounge-applet-2.2.0/configure.in.orig	2004-10-13 17:19:38.607583808 +0200
-+++ quick-lounge-applet-2.2.0/configure.in	2004-10-13 17:19:46.034454752 +0200
-@@ -70,7 +70,7 @@
+diff -urN quick-lounge-applet-2.10.0.orig/configure.in quick-lounge-applet-2.10.0/configure.in
+--- quick-lounge-applet-2.10.0.orig/configure.in	2005-04-05 11:46:48.000000000 +0200
++++ quick-lounge-applet-2.10.0/configure.in	2005-04-05 11:49:14.000000000 +0200
+@@ -73,7 +73,7 @@
  
  dnl ******************************
  
--ALL_LINGUAS="az bs ca cs de el en_CA en_GB es fi fr gu hr hu it ja ko ms nl no pl pt pt_BR ru sk sr sr@Latn sv uk zh_CN"
-+ALL_LINGUAS="az bs ca cs de el en_CA en_GB es fi fr gu hr hu it ja ko ms nb nl pl pt pt_BR ru sk sr sr@Latn sv uk zh_CN"
+-ALL_LINGUAS="az bs ca cs de el en_CA en_GB es fi fr gu hr hu it ja ko ms nl no pa pl pt pt_BR ru rw sk sr sr@Latn sv uk zh_CN"
++ALL_LINGUAS="az bs ca cs de el en_CA en_GB es fi fr gu hr hu it ja ko ms nb nl pa pl pt pt_BR ru rw sk sr sr@Latn sv uk zh_CN"
  GETTEXT_PACKAGE=quick-lounge-applet
  AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [GetText Package])
  AC_SUBST(GETTEXT_PACKAGE)
