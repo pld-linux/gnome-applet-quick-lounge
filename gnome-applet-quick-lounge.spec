@@ -8,7 +8,11 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/2.0/quick-lounge-applet-%{version}.tar.bz2
 # Source0-md5:	b3791f2a67dcb9d9475479b5aab6d424
 URL:		http://quick-lounge.sourceforge.net/
+BuildRequires:	gnome-desktop-devel >= 2.1.0
 BuildRequires:	gnome-panel-devel >= 2.2.0
+Buildrequires:	gnome-fvs2-devel >= 2.0.0
+BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgnomeui-devel >= 2.1.0
 Requires(post):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
 %config %{_sysconfdir}/gconf/schemas/*
-%attr(755,root,root) %{_libdir}/lib*.so*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_libdir}/bonobo/servers/*.server
 %{_datadir}/gnome-2.0/ui/*.xml
