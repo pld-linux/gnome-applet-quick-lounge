@@ -18,7 +18,7 @@ BuildRequires:	gnome-vfs2-devel >= 2.4.0
 BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	libtool
-Buildrequires:	scrollkeeper
+BuildRequires:	scrollkeeper
 Requires(post):	GConf2
 Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
