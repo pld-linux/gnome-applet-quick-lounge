@@ -1,26 +1,29 @@
 Summary:	Organize your preferred applications on the GNOME Panel
 Summary(pl):	Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME
 Name:		gnome-applet-quick-lounge
-Version:	2.2.0
-Release:	0.1
-License:	GPL
+Version:	2.10.0
+Release:	1
+License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/2.2/quick-lounge-applet-%{version}.tar.bz2
-# Source0-md5:	d28cfa7046c3a5ae74f68e7c8b9c321e
+Source0:	http://ftp.gnome.org/pub/gnome/sources/quick-lounge-applet/2.10/quick-lounge-applet-%{version}.tar.bz2
+# Source0-md5:	ca11d19d2efda48b36e409619478c775
 Patch0:		%{name}-locale-names.patch
 URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-desktop-devel >= 2.4.0
-BuildRequires:	gnome-panel-devel >= 2.4.0
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.4.0
+BuildRequires:	gnome-desktop-devel >= 2.10.0-2
+BuildRequires:	gnome-menus-devel >= 2.10.1
+BuildRequires:	gnome-panel-devel >= 2.10.0-2
+BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
+BuildRequires:	intltool
+BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
+BuildRequires:	rpmbuild(macros) >= 1.196
 BuildRequires:	scrollkeeper
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +37,6 @@ Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 %patch0 -p1
 
 mv po/{no,nb}.po
-rm po/*.gmo
 
 %build
 cp -f /usr/share/automake/config.sub .
@@ -45,7 +47,6 @@ cp -f /usr/share/automake/config.sub .
 %configure \
 	--disable-schemas-install \
 	--disable-static
-
 %{__make}
 
 %install
@@ -61,10 +62,18 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+/usr/bin/scrollkeeper-update -q
+%gconf_schema_install /etc/gconf/schemas/quick-lounge.schemas
 
-%postun -p /usr/bin/scrollkeeper-update
+%preun
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/quick-lounge.schemas
+fi
+
+%postun
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %files -f quick-lounge-applet.lang
 %defattr(644,root,root,755)
