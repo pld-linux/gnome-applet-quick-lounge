@@ -20,7 +20,7 @@ BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
-BuildRequires:	rpmbuild(macros) >= 1.196
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -62,18 +62,14 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/quick-lounge.schemas
+%scrollkeeper_update_post
+%gconf_schema_install quick-lounge.schemas
 
 %preun
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/quick-lounge.schemas
-fi
+%gconf_schema_uninstall quick-lounge.schemas
 
 %postun
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %files -f quick-lounge-applet.lang
 %defattr(644,root,root,755)
