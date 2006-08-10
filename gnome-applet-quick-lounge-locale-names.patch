@@ -5,8 +5,8 @@ diff -urN quick-lounge-applet-2.12.0.orig/configure.in quick-lounge-applet-2.12.
  
  dnl ******************************
  
--ALL_LINGUAS="az bg bs ca cs de el en_CA en_GB es fi fr gl gu hr hu it ja ko ms nl no pa pl pt pt_BR ru rw sk sr sr@Latn sv uk zh_CN"
-+ALL_LINGUAS="az bg bs ca cs de el en_CA en_GB es fi fr gl gu hr hu it ja ko ms nb nl pa pl pt pt_BR ru rw sk sr sr@Latn sv uk zh_CN"
+-ALL_LINGUAS="az bg bs ca cs de el en_CA en_GB es fi fr gl gu hr hu it ja ko ms ne nl no pa pl pt pt_BR ru rw sk sr sr@Latn sv uk zh_CN"
++ALL_LINGUAS="az bg bs ca cs de el en_CA en_GB es fi fr gl gu hr hu it ja ko ms nb ne nl pa pl pt pt_BR ru rw sk sr sr@Latn sv uk zh_CN"
  GETTEXT_PACKAGE=quick-lounge-applet
  AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [GetText Package])
  AC_SUBST(GETTEXT_PACKAGE)
