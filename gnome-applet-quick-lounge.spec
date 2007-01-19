@@ -38,8 +38,6 @@ Umieszcza ulubione aplikacje u¿ytkownika na panelu GNOME.
 %prep
 %setup -q -n quick-lounge-applet-%{version}
 
-#mv po/{no,nb}.po
-
 %build
 cp -f /usr/share/automake/config.sub .
 %{__gnome_doc_common}
