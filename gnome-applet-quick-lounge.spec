@@ -1,5 +1,5 @@
 Summary:	Organize your preferred applications on the GNOME Panel
-Summary(pl.UTF-8):   Umieszcza ulubione aplikacje użytkownika na panelu GNOME
+Summary(pl.UTF-8):	Umieszcza ulubione aplikacje użytkownika na panelu GNOME
 Name:		gnome-applet-quick-lounge
 Version:	2.12.4
 Release:	1
