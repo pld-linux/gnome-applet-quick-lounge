@@ -11,7 +11,9 @@ URL:		http://quick-lounge.sourceforge.net/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0-2
+BuildRequires:	gnome-doc-utils
 BuildRequires:	gnome-desktop-devel >= 2.12.0
 BuildRequires:	gnome-menus-devel >= 2.12.0
 BuildRequires:	gnome-panel-devel >= 2.12.0
